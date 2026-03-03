@@ -1,7 +1,16 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:quoteoftheday/home.dart';
 
 void main() {
+  AwesomeNotifications().initialize(null, [
+    NotificationChannel(
+      channelKey: 'quote_key',
+      channelName: 'Quote of the Day',
+      channelDescription: 'The Office QOTD',
+      importance: NotificationImportance.High,
+    ),
+  ]);
   runApp(QuoteOfTheDay());
 }
 
